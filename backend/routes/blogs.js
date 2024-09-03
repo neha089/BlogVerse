@@ -22,6 +22,27 @@ router.post('/', async (req, res) => {
     } catch (err) {
         res.status(400).json({ msg: err.message });
     }
+    
 });
+// Update a blog
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(updatedBlog);
+    } catch (err) {
+        res.status(400).json({ msg: err.message });
+    }
+});
+
+// Delete a blog
+router.delete('/:id', async (req, res) => {
+    try {
+        await Blog.findByIdAndDelete(req.params.id);
+        res.json({ msg: 'Blog deleted' });
+    } catch (err) {
+        res.status(400).json({ msg: err.message });
+    }
+});
+
 
 module.exports = router;
