@@ -1,0 +1,137 @@
+/* Global Styles */
+body {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Links */
+a {
+    color: #1E90FF; /* DodgerBlue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background-color: #1E90FF; /* Blue buttons */
+    color: #ffffff; /* White text on buttons */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1C86EE; /* Slightly darker blue on hover */
+}
+
+/* Header Styling */
+header {
+    background-color: #1E90FF; /* Dark Blue */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Blog Cards */
+.blog-card {
+    background-color: #1c1c1c; /* Dark gray for contrast */
+    border: 2px solid #1E90FF; /* Blue border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.blog-title {
+    color: #1E90FF; /* Highlight title */
+    margin-bottom: 10px;
+}
+
+.blog-content {
+    color: #dddddd;
+    margin-bottom: 10px;
+}
+
+.blog-author {
+    color: #70ebca; /* Highlight author name */
+    font-weight: bold;
+    margin-right: 15px; /* Space between author and buttons */
+    margin-bottom: 500px; /* Space below author name */
+}
+
+.blog-buttons {
+    display: flex;
+    gap: 10px; /* Space between Edit and Delete buttons */
+}
+
+/* Form Styling */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #1E90FF;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+input:focus, textarea:focus {
+    border-color: #1C86EE;
+    outline: none;
+}
+
+label {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1E90FF;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Edit and Delete Buttons */
+.edit-btn {
+    background-color: #FFD700; /* Gold */
+    color: #000000; /* Black text */
+}
+
+.edit-btn:hover {
+    background-color: #FFC107; /* Slightly lighter gold */
+}
+
+.delete-btn {
+    background-color: #FF4500; /* OrangeRed */
+    color: #ffffff; /* White text */
+}
+
+.delete-btn:hover {
+    background-color: #FF6347; /* Slightly lighter red */
+}

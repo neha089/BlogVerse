@@ -7,13 +7,13 @@ export const BlogProvider = ({ children }) => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/blogs')
+        axios.get('/api/blogs')
             .then(response => setBlogs(response.data))
             .catch(error => console.error(error));
     }, []);
 
     return (
-        <BlogContext.Provider value={{ blogs }}>
+        <BlogContext.Provider value={{ blogs, setBlogs }}>
             {children}
         </BlogContext.Provider>
     );

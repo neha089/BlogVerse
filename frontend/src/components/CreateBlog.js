@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import BlogContext from '../context/BlogContext';
+import { toast } from 'react-toastify';
 
 const CreateBlog = () => {
+    const { setBlogs } = useContext(BlogContext);
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [author, setAuthor] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/blogs', { title, content, author })
-            .then(response => {
-                console.log(response.data);
-                setTitle('');
-                setContent('');
-                setAuthor('');
-            })
-            .catch(error => console.error(error));
+        try {
+            const response = await axios.post('/api/blogs', { title, content, author });
+            setBlogs(prevBlogs => [...prevBlogs, response.data]);
+            setTitle('');
+            setContent('');
+            setAuthor('');
+            toast.success("Blog created successfully!");
+        } catch (error) {
+            console.error(error);
+            toast.error("Error creating blog.");
+        }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="create-blog-form">
             <input
                 type="text"
                 placeholder="Title"
